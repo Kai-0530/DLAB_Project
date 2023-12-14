@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 --------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.1 (win64) Build 3865809 Sun May  7 15:05:29 MDT 2023
-| Date         : Fri Dec 15 01:42:08 2023
-| Host         : DESKTOP-PTU0TRS running 64-bit major release  (build 9200)
+| Date         : Fri Dec 15 02:23:37 2023
+| Host         : DESKTOP-UB104BU running 64-bit major release  (build 9200)
 | Command      : report_methodology -file main_methodology_drc_routed.rpt -pb main_methodology_drc_routed.pb -rpx main_methodology_drc_routed.rpx
 | Design       : main
 | Device       : xc7a35ticsg324-1L
@@ -23,13 +23,12 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 2122
+             Violations found: 2088
 +-----------+------------------+-----------------------------------------------------------+------------+
 | Rule      | Severity         | Description                                               | Violations |
 +-----------+------------------+-----------------------------------------------------------+------------+
 | TIMING-17 | Critical Warning | Non-clocked sequential cell                               | 23         |
 | SYNTH-5   | Warning          | Mapped onto distributed RAM because of timing constraints | 2040       |
-| TIMING-16 | Warning          | Large setup violation                                     | 34         |
 | TIMING-18 | Warning          | Missing input or output delay                             | 25         |
 +-----------+------------------+-----------------------------------------------------------+------------+
 
@@ -10348,176 +10347,6 @@ Related violations: <none>
 SYNTH-5#2040 Warning
 Mapped onto distributed RAM because of timing constraints  
 The instance ram6/RAM_reg_9984_10239_9_9 is implemented as distributed LUT RAM for the following reason: The timing constraints suggest that the chosen mapping will yield a better timing.
-Related violations: <none>
-
-TIMING-16#1 Warning
-Large setup violation  
-There is a large setup violation of -1.003 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[3]_rep/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#2 Warning
-Large setup violation  
-There is a large setup violation of -1.019 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[7]_rep__7/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#3 Warning
-Large setup violation  
-There is a large setup violation of -1.042 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[7]_rep__3/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#4 Warning
-Large setup violation  
-There is a large setup violation of -1.042 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[7]_rep__6/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#5 Warning
-Large setup violation  
-There is a large setup violation of -1.044 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[5]_rep__9/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#6 Warning
-Large setup violation  
-There is a large setup violation of -1.046 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[7]_rep/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#7 Warning
-Large setup violation  
-There is a large setup violation of -1.052 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[7]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#8 Warning
-Large setup violation  
-There is a large setup violation of -1.053 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[5]_rep__7/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#9 Warning
-Large setup violation  
-There is a large setup violation of -1.054 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[5]_rep__3/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#10 Warning
-Large setup violation  
-There is a large setup violation of -1.055 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[7]_rep__4/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#11 Warning
-Large setup violation  
-There is a large setup violation of -1.059 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[7]_rep__10/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#12 Warning
-Large setup violation  
-There is a large setup violation of -1.062 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[7]_rep__2/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#13 Warning
-Large setup violation  
-There is a large setup violation of -1.067 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[4]_rep__2/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#14 Warning
-Large setup violation  
-There is a large setup violation of -1.067 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[7]_rep__5/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#15 Warning
-Large setup violation  
-There is a large setup violation of -1.074 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[5]_rep__10/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#16 Warning
-Large setup violation  
-There is a large setup violation of -1.075 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[7]_rep__1/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#17 Warning
-Large setup violation  
-There is a large setup violation of -1.076 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[4]_rep__1/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#18 Warning
-Large setup violation  
-There is a large setup violation of -1.076 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[5]_rep__8/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#19 Warning
-Large setup violation  
-There is a large setup violation of -1.077 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[5]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#20 Warning
-Large setup violation  
-There is a large setup violation of -1.078 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[5]_rep__6/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#21 Warning
-Large setup violation  
-There is a large setup violation of -1.079 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[5]_rep__0/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#22 Warning
-Large setup violation  
-There is a large setup violation of -1.081 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[5]_rep__1/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#23 Warning
-Large setup violation  
-There is a large setup violation of -1.084 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[5]_rep/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#24 Warning
-Large setup violation  
-There is a large setup violation of -1.086 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[4]_rep__6/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#25 Warning
-Large setup violation  
-There is a large setup violation of -1.086 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[4]_rep__9/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#26 Warning
-Large setup violation  
-There is a large setup violation of -1.087 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[7]_rep__8/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#27 Warning
-Large setup violation  
-There is a large setup violation of -1.089 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[6]/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#28 Warning
-Large setup violation  
-There is a large setup violation of -1.089 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[6]_rep__3/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#29 Warning
-Large setup violation  
-There is a large setup violation of -1.091 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[5]_rep__2/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#30 Warning
-Large setup violation  
-There is a large setup violation of -1.092 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[6]_rep__8/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#31 Warning
-Large setup violation  
-There is a large setup violation of -1.181 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[5]_rep__4/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#32 Warning
-Large setup violation  
-There is a large setup violation of -1.183 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[7]_rep__9/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#33 Warning
-Large setup violation  
-There is a large setup violation of -1.185 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[4]_rep__4/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
-Related violations: <none>
-
-TIMING-16#34 Warning
-Large setup violation  
-There is a large setup violation of -1.221 ns between jumping_reg[0]_replica/C (clocked by sys_clk_pin) and pixel_addr_pika_reg[6]_rep__10/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-18#1 Warning

@@ -29,7 +29,8 @@ localparam [3:0] S_MAIN_INIT    = 0,
 // Declare system variables
 wire [3:0]  btn_pressed;
 reg  [3:0]  P, P_next;
-assign usr_led = P;
+reg is_smashing = 0;
+assign usr_led[3] = is_smashing;
  
 reg  [31:0] clk_wait, clk_ball, clk_gravity;
 reg  [31:0] speed_up;
@@ -312,6 +313,16 @@ end
 
 // ------------------------------------------------------------------------
 // BALL
+reg [31:0] smash_cnt_down = 0; // smashing for 0.5sec
+always @(posedge clk) begin
+  if (~reset_n || smash_cnt_down == 10000000) smash_cnt_down <= 0;
+  else if (is_smashing) smash_cnt_down <= smash_cnt_down + 1;
+end
+always @(posedge clk) begin
+  if (~reset_n || smash_cnt_down == 10000000) is_smashing <= 0;
+  else if (btn_pressed[3]) is_smashing <= 1;
+end
+
 always @(posedge clk) begin
   if (~reset_n) begin
     last_win <= 0;
@@ -359,22 +370,35 @@ always @(posedge clk) begin //speed
       speed_y <= (-1) * speed_y;
     end else if (BALL_VPOS_TOP <= (PIKA_VPOS - jumping) && (PIKA_VPOS - BALL_VPOS_TOP <= 30+jumping) &&
                  BALL_HPOS_L >= (PIKA_HPOS_R - 21) && BALL_HPOS_L <= PIKA_HPOS_R) begin
-      speed_x <= (speed_x > 0 ? speed_x : (-1) * speed_x); //right of pika
+      //speed_x <= (speed_x > 0 ? speed_x : (-1) * speed_x); //right of pika
+      speed_x <= 8;
       speed_y <= 10;
     end else if (BALL_VPOS_TOP <= (PIKA_VPOS - jumping) && (PIKA_VPOS - BALL_VPOS_TOP <= 30+jumping) &&
-                 BALL_HPOS_L >= (PIKA_HPOS_R - 41 - 20) && BALL_HPOS_L <= PIKA_HPOS_R) begin
-      speed_x <= (speed_x <= 0 ? (speed_x == 0 ? -8 : speed_x) : (-1) * speed_x);
-      speed_y <= 10;
+                 BALL_HPOS_L >= (PIKA_HPOS_R - 41 - 20) && BALL_HPOS_L <= PIKA_HPOS_R) begin // ============================
+        if(is_smashing && PIKA_VPOS - jumping < 173)begin
+            if(PIKA_HPOS_R < 240)begin
+                speed_x <= -25;
+                speed_y <= -10;
+            end else begin
+                speed_x <= -25;
+                speed_y <= -5;
+            end
+        end else begin
+            speed_x <= -8;//速度變負的
+            speed_y <= 10;
+        end
     end else if (BALL_VPOS_TOP <= PIKA_BOT_VPOS && PIKA_BOT_VPOS - BALL_VPOS_TOP <= 30 &&
                  BALL_HPOS_L + 30 <= PIKA_BOT_HPOS_R - 20 && BALL_HPOS_L + 30 >= PIKA_BOT_HPOS_R - 40) begin
-      speed_x <= (speed_x < 0 ? speed_x : (-1) * speed_x);
+      //speed_x <= (speed_x < 0 ? speed_x : (-1) * speed_x);
+      speed_x <= -8;
       speed_y <= 10;
     end else if (BALL_VPOS_TOP <= PIKA_BOT_VPOS && PIKA_BOT_VPOS - BALL_VPOS_TOP <= 30 &&
                  BALL_HPOS_L >= PIKA_BOT_HPOS_R - 40 && BALL_HPOS_L <= PIKA_BOT_HPOS_R) begin
-      speed_x <= (speed_x >= 0 ? (speed_x == 0 ? 8 : speed_x) : (-1) * speed_x);
+      //speed_x <= (speed_x >= 0 ? (speed_x == 0 ? 8 : speed_x) : (-1) * speed_x);
+      speed_x <= 8;  
       speed_y <= 10;
     end else if (BALL_HPOS_L <= 0 || BALL_HPOS_R <= 0) begin //boundary
-      speed_x <= (-1) * speed_x;
+      speed_x <= (speed_x >= 0)? -8:8;
     end else if (BALL_HPOS_L <= 160 && BALL_HPOS_L + 29 >= 160 && BALL_VPOS_TOP >= 110) begin
       speed_y <= (-1) * speed_y;
     end else if (last_touched) begin
