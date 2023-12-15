@@ -76,8 +76,8 @@ localparam VBUF_H = 240; // video buffer height
 localparam PIKA_W = 41;
 localparam PIKA_H = 42;
 localparam BALL_W = 30;
-localparam SCORE_H = 51;
-localparam SCORE_W = 51;
+localparam SCORE_H = 30;
+localparam SCORE_W = 24;
 localparam BALL_H = 30;
 localparam CLOUD_W = 45;
 localparam CLOUD_H = 20;
@@ -89,10 +89,10 @@ reg [31:0] PIKA_BOT_HPOS_R = 40;
 localparam CLOUD1_VPOS = 27;
 localparam CLOUD2_VPOS = 38;
 
-localparam SCORE_VPOS = 15;
-localparam SCORE_L = 25;
-localparam SCORE2_VPOS = 15;
-localparam SCORE2_L = 250;
+localparam SCORE_VPOS = 25;
+localparam SCORE_L = 40;//320-40=280-24=256
+localparam SCORE2_VPOS = 25;
+localparam SCORE2_L = 256;
  
 reg signed [31:0] BALL_VPOS_TOP = 5;
 reg signed [31:0] BALL_HPOS_L = 278;
@@ -178,11 +178,11 @@ sram #(.DATA_WIDTH(12), .ADDR_WIDTH(18), .RAM_SIZE(CLOUD_W*CLOUD_H), .FILE("clou
   ram5 (.clk(clk), .we(sram_we), .en(sram_en),
           .addr(sram_addr_cloud2), .data_i(data_in), .data_o(data_out_cloud2));
 
-sram #(.DATA_WIDTH(12), .ADDR_WIDTH(18), .RAM_SIZE(51*51*8), .FILE("nums.mem"))
+sram #(.DATA_WIDTH(12), .ADDR_WIDTH(18), .RAM_SIZE(SCORE_H*SCORE_W*8), .FILE("nums.mem"))
   ram6 (.clk(clk), .we(sram_we), .en(sram_en),
           .addr(sram_addr_score), .data_i(data_in), .data_o(data_out_score));
 
-sram #(.DATA_WIDTH(12), .ADDR_WIDTH(18), .RAM_SIZE(51*51*8), .FILE("nums.mem"))
+sram #(.DATA_WIDTH(12), .ADDR_WIDTH(18), .RAM_SIZE(SCORE_H*SCORE_W*8), .FILE("nums.mem"))
   ram7 (.clk(clk), .we(sram_we), .en(sram_en),
           .addr(sram_addr_score2), .data_i(data_in), .data_o(data_out_score2));
 

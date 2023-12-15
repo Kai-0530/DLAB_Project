@@ -17,7 +17,7 @@ proc create_report { reportName command } {
   }
 }
 namespace eval ::optrace {
-  variable script "C:/Users/Shlab_18/Desktop/project/project.runs/impl_1/main.tcl"
+  variable script "C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.runs/impl_1/main.tcl"
   variable category "vivado_impl"
 }
 
@@ -132,15 +132,15 @@ OPTRACE "create in-memory project" START { }
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir C:/Users/Shlab_18/Desktop/project/project.cache/wt [current_project]
-  set_property parent.project_path C:/Users/Shlab_18/Desktop/project/project.xpr [current_project]
-  set_property ip_output_repo C:/Users/Shlab_18/Desktop/project/project.cache/ip [current_project]
+  set_property webtalk.parent_dir C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.cache/wt [current_project]
+  set_property parent.project_path C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.xpr [current_project]
+  set_property ip_output_repo C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet C:/Users/Shlab_18/Desktop/project/project.runs/synth_1/main.dcp
+  add_files -quiet C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.runs/synth_1/main.dcp
 OPTRACE "read constraints: implementation" START { }
-  read_xdc C:/Users/Shlab_18/Desktop/project/project.srcs/constrs_1/imports/new/pika.xdc
+  read_xdc C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/constrs_1/imports/new/pika.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }

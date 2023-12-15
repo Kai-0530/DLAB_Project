@@ -14,9 +14,9 @@ ECHO ¤wÃö³¬¡C
     ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source main.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 434.102 ; gain = 170.285
-Command: read_checkpoint -auto_incremental -incremental C:/Users/Shlab_18/Desktop/project/project.srcs/utils_1/imports/synth_1/main.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/Shlab_18/Desktop/project/project.srcs/utils_1/imports/synth_1/main.dcp for incremental synthesis
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 434.492 ; gain = 170.754
+Command: read_checkpoint -auto_incremental -incremental C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/utils_1/imports/synth_1/main.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/utils_1/imports/synth_1/main.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
 Command: synth_design -top main -part xc7a35ticsg324-1L
 Starting synth_design
@@ -27,60 +27,62 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 12264
+INFO: [Synth 8-7075] Helper process launched with PID 1400
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1250.426 ; gain = 411.594
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1250.312 ; gain = 411.184
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'main' [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:2]
-INFO: [Synth 8-6157] synthesizing module 'vga_sync' [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/imports/new/vga_sync.v:19]
-INFO: [Synth 8-6155] done synthesizing module 'vga_sync' (0#1) [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/imports/new/vga_sync.v:19]
-INFO: [Synth 8-6157] synthesizing module 'clk_divider' [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/imports/new/clk_divider.v:21]
+INFO: [Synth 8-6157] synthesizing module 'main' [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:2]
+INFO: [Synth 8-6157] synthesizing module 'vga_sync' [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/imports/new/vga_sync.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'vga_sync' (0#1) [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/imports/new/vga_sync.v:19]
+INFO: [Synth 8-6157] synthesizing module 'clk_divider' [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/imports/new/clk_divider.v:21]
 	Parameter divider bound to: 2 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'clk_divider' (0#1) [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/imports/new/clk_divider.v:21]
-INFO: [Synth 8-6157] synthesizing module 'btn_move' [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/imports/new/btn_move.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'btn_move' (0#1) [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/imports/new/btn_move.v:1]
-INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/imports/new/debounce.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'debounce' (0#1) [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/imports/new/debounce.v:1]
-INFO: [Synth 8-6157] synthesizing module 'sram' [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/imports/new/sram.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'clk_divider' (0#1) [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/imports/new/clk_divider.v:21]
+INFO: [Synth 8-6157] synthesizing module 'btn_move' [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/imports/new/btn_move.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'btn_move' (0#1) [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/imports/new/btn_move.v:1]
+INFO: [Synth 8-6157] synthesizing module 'debounce' [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/imports/new/debounce.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'debounce' (0#1) [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/imports/new/debounce.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sram' [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/imports/new/sram.v:8]
 	Parameter DATA_WIDTH bound to: 12 - type: integer 
 	Parameter ADDR_WIDTH bound to: 18 - type: integer 
 	Parameter RAM_SIZE bound to: 76800 - type: integer 
 	Parameter FILE bound to: background.mem - type: string 
-INFO: [Synth 8-3876] $readmem data file 'background.mem' is read successfully [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/imports/new/sram.v:25]
-INFO: [Synth 8-6155] done synthesizing module 'sram' (0#1) [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/imports/new/sram.v:8]
-INFO: [Synth 8-6157] synthesizing module 'sram__parameterized0' [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/imports/new/sram.v:8]
+INFO: [Synth 8-3876] $readmem data file 'background.mem' is read successfully [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/imports/new/sram.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'sram' (0#1) [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/imports/new/sram.v:8]
+INFO: [Synth 8-6157] synthesizing module 'sram__parameterized0' [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/imports/new/sram.v:8]
 	Parameter DATA_WIDTH bound to: 12 - type: integer 
 	Parameter ADDR_WIDTH bound to: 18 - type: integer 
 	Parameter RAM_SIZE bound to: 8610 - type: integer 
 	Parameter FILE bound to: pika.mem - type: string 
-INFO: [Synth 8-3876] $readmem data file 'pika.mem' is read successfully [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/imports/new/sram.v:25]
-INFO: [Synth 8-6155] done synthesizing module 'sram__parameterized0' (0#1) [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/imports/new/sram.v:8]
-INFO: [Synth 8-6157] synthesizing module 'sram__parameterized1' [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/imports/new/sram.v:8]
+INFO: [Synth 8-3876] $readmem data file 'pika.mem' is read successfully [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/imports/new/sram.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'sram__parameterized0' (0#1) [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/imports/new/sram.v:8]
+INFO: [Synth 8-6157] synthesizing module 'sram__parameterized1' [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/imports/new/sram.v:8]
 	Parameter DATA_WIDTH bound to: 12 - type: integer 
 	Parameter ADDR_WIDTH bound to: 18 - type: integer 
 	Parameter RAM_SIZE bound to: 4500 - type: integer 
 	Parameter FILE bound to: ball.mem - type: string 
-INFO: [Synth 8-3876] $readmem data file 'ball.mem' is read successfully [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/imports/new/sram.v:25]
-INFO: [Synth 8-6155] done synthesizing module 'sram__parameterized1' (0#1) [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/imports/new/sram.v:8]
-INFO: [Synth 8-6157] synthesizing module 'sram__parameterized2' [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/imports/new/sram.v:8]
+INFO: [Synth 8-3876] $readmem data file 'ball.mem' is read successfully [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/imports/new/sram.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'sram__parameterized1' (0#1) [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/imports/new/sram.v:8]
+INFO: [Synth 8-6157] synthesizing module 'sram__parameterized2' [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/imports/new/sram.v:8]
 	Parameter DATA_WIDTH bound to: 12 - type: integer 
 	Parameter ADDR_WIDTH bound to: 18 - type: integer 
 	Parameter RAM_SIZE bound to: 900 - type: integer 
 	Parameter FILE bound to: cloud.mem - type: string 
-INFO: [Synth 8-3876] $readmem data file 'cloud.mem' is read successfully [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/imports/new/sram.v:25]
-INFO: [Synth 8-6155] done synthesizing module 'sram__parameterized2' (0#1) [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/imports/new/sram.v:8]
-INFO: [Synth 8-6157] synthesizing module 'sram__parameterized3' [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/imports/new/sram.v:8]
+INFO: [Synth 8-3876] $readmem data file 'cloud.mem' is read successfully [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/imports/new/sram.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'sram__parameterized2' (0#1) [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/imports/new/sram.v:8]
+INFO: [Synth 8-6157] synthesizing module 'sram__parameterized3' [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/imports/new/sram.v:8]
 	Parameter DATA_WIDTH bound to: 12 - type: integer 
 	Parameter ADDR_WIDTH bound to: 18 - type: integer 
-	Parameter RAM_SIZE bound to: 20808 - type: integer 
+	Parameter RAM_SIZE bound to: 5760 - type: integer 
 	Parameter FILE bound to: nums.mem - type: string 
-INFO: [Synth 8-3876] $readmem data file 'nums.mem' is read successfully [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/imports/new/sram.v:25]
-INFO: [Synth 8-6155] done synthesizing module 'sram__parameterized3' (0#1) [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/imports/new/sram.v:8]
-INFO: [Synth 8-6155] done synthesizing module 'main' (0#1) [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:2]
-WARNING: [Synth 8-3936] Found unconnected internal register 'pixel_addr_bg_reg' and it is trimmed from '18' to '17' bits. [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:194]
+INFO: [Synth 8-3876] $readmem data file 'nums.mem' is read successfully [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/imports/new/sram.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'sram__parameterized3' (0#1) [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/imports/new/sram.v:8]
+INFO: [Synth 8-6155] done synthesizing module 'main' (0#1) [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:2]
+WARNING: [Synth 8-3936] Found unconnected internal register 'pixel_addr_bg_reg' and it is trimmed from '18' to '17' bits. [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:194]
 WARNING: [Synth 8-7129] Port addr[17] in module sram__parameterized3 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port addr[16] in module sram__parameterized3 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port addr[15] in module sram__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[14] in module sram__parameterized3 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port addr[13] in module sram__parameterized3 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port addr[17] in module sram__parameterized2 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port addr[16] in module sram__parameterized2 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port addr[15] in module sram__parameterized2 is either unconnected or has no load
@@ -106,53 +108,53 @@ WARNING: [Synth 8-7129] Port usr_sw[2] in module main is either unconnected or h
 WARNING: [Synth 8-7129] Port usr_sw[1] in module main is either unconnected or has no load
 WARNING: [Synth 8-7129] Port usr_sw[0] in module main is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1404.551 ; gain = 565.719
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1397.805 ; gain = 558.676
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1404.551 ; gain = 565.719
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1397.805 ; gain = 558.676
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1404.551 ; gain = 565.719
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1397.805 ; gain = 558.676
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.042 . Memory (MB): peak = 1404.551 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 1397.805 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [C:/Users/Shlab_18/Desktop/project/project.srcs/constrs_1/imports/new/pika.xdc]
-Finished Parsing XDC File [C:/Users/Shlab_18/Desktop/project/project.srcs/constrs_1/imports/new/pika.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Shlab_18/Desktop/project/project.srcs/constrs_1/imports/new/pika.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/main_propImpl.xdc].
+Parsing XDC File [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/constrs_1/imports/new/pika.xdc]
+Finished Parsing XDC File [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/constrs_1/imports/new/pika.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/constrs_1/imports/new/pika.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/main_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/main_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1471.203 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1498.090 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1471.203 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1498.090 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1471.203 ; gain = 632.371
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1498.090 ; gain = 658.961
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35ticsg324-1L
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1471.203 ; gain = 632.371
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1498.090 ; gain = 658.961
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1471.203 ; gain = 632.371
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:17 . Memory (MB): peak = 1498.090 ; gain = 658.961
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1471.203 ; gain = 632.371
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1498.090 ; gain = 658.961
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -178,8 +180,8 @@ Detailed RTL Component Info :
 	                1 Bit    Registers := 7     
 +---RAMs : 
 	             900K Bit	(76800 X 12 bit)          RAMs := 1     
-	             243K Bit	(20808 X 12 bit)          RAMs := 2     
 	             100K Bit	(8610 X 12 bit)          RAMs := 2     
+	              67K Bit	(5760 X 12 bit)          RAMs := 2     
 	              52K Bit	(4500 X 12 bit)          RAMs := 1     
 	              10K Bit	(900 X 12 bit)          RAMs := 2     
 +---Muxes : 
@@ -246,7 +248,7 @@ DSP Report: register pixel_addr_cloud2_reg is absorbed into DSP pixel_addr_cloud
 DSP Report: operator pixel_addr_cloud20 is absorbed into DSP pixel_addr_cloud2_reg.
 DSP Report: operator pixel_addr_cloud21 is absorbed into DSP pixel_addr_cloud2_reg.
 DSP Report: operator pixel_addr_cloud22 is absorbed into DSP pixel_addr_cloud2_reg.
-DSP Report: Generating DSP pixel_addr_score2, operation Mode is: (D+(A:0x3ffffff1))*(B:0x33).
+DSP Report: Generating DSP pixel_addr_score2, operation Mode is: (D+(A:0x3fffffe7))*(B:0x18).
 DSP Report: operator pixel_addr_score2 is absorbed into DSP pixel_addr_score2.
 DSP Report: operator pixel_addr_score3 is absorbed into DSP pixel_addr_score2.
 WARNING: [Synth 8-7129] Port usr_led[2] in module main is either unconnected or has no load
@@ -256,9 +258,9 @@ WARNING: [Synth 8-7129] Port usr_sw[2] in module main is either unconnected or h
 WARNING: [Synth 8-7129] Port usr_sw[1] in module main is either unconnected or has no load
 WARNING: [Synth 8-7129] Port usr_sw[0] in module main is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:34 ; elapsed = 00:00:34 . Memory (MB): peak = 1471.203 ; gain = 632.371
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1498.090 ; gain = 658.961
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-5835] Resources of type BRAM have been overutilized. Used = 152, Available = 100. Will try to implement using LUT-RAM. 
+WARNING: [Synth 8-5835] Resources of type BRAM have been overutilized. Used = 116, Available = 100. Will try to implement using LUT-RAM. 
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
@@ -267,23 +269,23 @@ Block RAM: Preliminary Mapping Report (see note below)
 +------------+--------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 |Module Name | RTL Object   | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
 +------------+--------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|main        | ram7/RAM_reg | 20 K x 12(WRITE_FIRST) | W | R |                        |   |   | Port A           | 0      | 12     | 
+|main        | ram1/RAM_reg | 8 K x 12(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 0      | 6      | 
+|main        | ram2/RAM_reg | 8 K x 12(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 0      | 6      | 
 |main        | ram0/RAM_reg | 75 K x 12(WRITE_FIRST) | W | R |                        |   |   | Port A           | 0      | 36     | 
 +------------+--------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 
 Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
 
 Distributed RAM: Preliminary Mapping Report (see note below)
-+------------+--------------+-----------+----------------------+-------------------------------------------------------------+
-|Module Name | RTL Object   | Inference | Size (Depth x Width) | Primitives                                                  | 
-+------------+--------------+-----------+----------------------+-------------------------------------------------------------+
-|main        | ram1/RAM_reg | Implied   | 16 K x 12            | RAM16X1S x 12 RAM32X1S x 12 RAM128X1S x 12 RAM256X1S x 396  | 
-|main        | ram2/RAM_reg | Implied   | 16 K x 12            | RAM16X1S x 12 RAM32X1S x 12 RAM128X1S x 12 RAM256X1S x 396  | 
-|main        | ram3/RAM_reg | Implied   | 8 K x 12             | RAM16X1S x 24 RAM128X1S x 12 RAM256X1S x 204                | 
-|main        | ram4/RAM_reg | Implied   | 1 K x 12             | RAM16X1S x 12 RAM128X1S x 12 RAM256X1S x 36                 | 
-|main        | ram5/RAM_reg | Implied   | 1 K x 12             | RAM16X1S x 12 RAM128X1S x 12 RAM256X1S x 36                 | 
-|main        | ram6/RAM_reg | Implied   | 32 K x 12            | RAM16X1S x 12 RAM64X1S x 12 RAM256X1S x 972                 | 
-+------------+--------------+-----------+----------------------+-------------------------------------------------------------+
++------------+--------------+-----------+----------------------+-----------------------------------------------+
+|Module Name | RTL Object   | Inference | Size (Depth x Width) | Primitives                                    | 
++------------+--------------+-----------+----------------------+-----------------------------------------------+
+|main        | ram3/RAM_reg | Implied   | 8 K x 12             | RAM16X1S x 24 RAM128X1S x 12 RAM256X1S x 204  | 
+|main        | ram4/RAM_reg | Implied   | 1 K x 12             | RAM16X1S x 12 RAM128X1S x 12 RAM256X1S x 36   | 
+|main        | ram5/RAM_reg | Implied   | 1 K x 12             | RAM16X1S x 12 RAM128X1S x 12 RAM256X1S x 36   | 
+|main        | ram6/RAM_reg | Implied   | 8 K x 12             | RAM128X1S x 12 RAM256X1S x 264                | 
+|main        | ram7/RAM_reg | Implied   | 8 K x 12             | RAM128X1S x 12 RAM256X1S x 264                | 
++------------+--------------+-----------+----------------------+-----------------------------------------------+
 
 Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
 
@@ -299,7 +301,7 @@ DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding R
 |main        | (PCIN+(A:0x0):B+C)'           | 30     | 17     | 12     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 1    | 
 |main        | C+(D+(A:0x3fffffe5))*(B:0x2d) | 17     | 6      | 17     | 9      | 17     | 0    | 0    | 0    | 0    | 0     | 0    | 1    | 
 |main        | C+(D+(A:0x3fffffda))*(B:0x2d) | 17     | 6      | 17     | 9      | 17     | 0    | 0    | 0    | 0    | 0     | 0    | 1    | 
-|main        | (D+(A:0x3ffffff1))*(B:0x33)   | 17     | 6      | -      | 9      | 23     | 0    | 0    | -    | 0    | 0     | 0    | 0    | 
+|main        | (D+(A:0x3fffffe7))*(B:0x18)   | 17     | 5      | -      | 9      | 22     | 0    | 0    | -    | 0    | 0     | 0    | 0    | 
 +------------+-------------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
@@ -310,13 +312,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:44 ; elapsed = 00:00:45 . Memory (MB): peak = 1498.898 ; gain = 660.066
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:42 ; elapsed = 00:00:43 . Memory (MB): peak = 1498.090 ; gain = 658.961
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:08 ; elapsed = 00:01:09 . Memory (MB): peak = 1701.586 ; gain = 862.754
+Finished Timing Optimization : Time (s): cpu = 00:01:04 ; elapsed = 00:01:05 . Memory (MB): peak = 1682.406 ; gain = 843.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -326,22 +328,22 @@ Block RAM: Final Mapping Report
 +------------+--------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 |Module Name | RTL Object   | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
 +------------+--------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
-|main        | ram7/RAM_reg | 20 K x 12(WRITE_FIRST) | W | R |                        |   |   | Port A           | 0      | 12     | 
+|main        | ram1/RAM_reg | 8 K x 12(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 0      | 6      | 
+|main        | ram2/RAM_reg | 8 K x 12(WRITE_FIRST)  | W | R |                        |   |   | Port A           | 0      | 6      | 
 |main        | ram0/RAM_reg | 75 K x 12(WRITE_FIRST) | W | R |                        |   |   | Port A           | 0      | 36     | 
 +------------+--------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
 
 
 Distributed RAM: Final Mapping Report
-+------------+--------------+-----------+----------------------+-------------------------------------------------------------+
-|Module Name | RTL Object   | Inference | Size (Depth x Width) | Primitives                                                  | 
-+------------+--------------+-----------+----------------------+-------------------------------------------------------------+
-|main        | ram1/RAM_reg | Implied   | 16 K x 12            | RAM16X1S x 12 RAM32X1S x 12 RAM128X1S x 12 RAM256X1S x 396  | 
-|main        | ram2/RAM_reg | Implied   | 16 K x 12            | RAM16X1S x 12 RAM32X1S x 12 RAM128X1S x 12 RAM256X1S x 396  | 
-|main        | ram3/RAM_reg | Implied   | 8 K x 12             | RAM16X1S x 24 RAM128X1S x 12 RAM256X1S x 204                | 
-|main        | ram4/RAM_reg | Implied   | 1 K x 12             | RAM16X1S x 12 RAM128X1S x 12 RAM256X1S x 36                 | 
-|main        | ram5/RAM_reg | Implied   | 1 K x 12             | RAM16X1S x 12 RAM128X1S x 12 RAM256X1S x 36                 | 
-|main        | ram6/RAM_reg | Implied   | 32 K x 12            | RAM16X1S x 12 RAM64X1S x 12 RAM256X1S x 972                 | 
-+------------+--------------+-----------+----------------------+-------------------------------------------------------------+
++------------+--------------+-----------+----------------------+-----------------------------------------------+
+|Module Name | RTL Object   | Inference | Size (Depth x Width) | Primitives                                    | 
++------------+--------------+-----------+----------------------+-----------------------------------------------+
+|main        | ram3/RAM_reg | Implied   | 8 K x 12             | RAM16X1S x 24 RAM128X1S x 12 RAM256X1S x 204  | 
+|main        | ram4/RAM_reg | Implied   | 1 K x 12             | RAM16X1S x 12 RAM128X1S x 12 RAM256X1S x 36   | 
+|main        | ram5/RAM_reg | Implied   | 1 K x 12             | RAM16X1S x 12 RAM128X1S x 12 RAM256X1S x 36   | 
+|main        | ram6/RAM_reg | Implied   | 8 K x 12             | RAM128X1S x 12 RAM256X1S x 264                | 
+|main        | ram7/RAM_reg | Implied   | 8 K x 12             | RAM128X1S x 12 RAM256X1S x 264                | 
++------------+--------------+-----------+----------------------+-----------------------------------------------+
 
 ---------------------------------------------------------------------------------
 Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -349,50 +351,50 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[0] ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[0]__0 ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:594]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[31]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[31] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[30]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[30] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[29]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[29] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[28]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[28] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[27]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[27] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[26]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[26] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[25]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[25] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[24]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[24] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[23]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[23] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[22]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[22] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[21]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[21] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[20]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[20] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[19]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[19] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[18]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[18] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[17]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[17] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[16]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[16] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[15]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[15] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[14]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[14] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[13]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[13] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[12]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[12] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[11]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[11] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[10]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[10] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[9]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[9] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[7]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[7] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[6]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[6] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[8]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[8] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[5]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[5] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[4]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[4] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[3]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[3] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[2]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[2] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[1]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[1] ) and driving same net [C:/Users/Shlab_18/Desktop/project/project.srcs/sources_1/new/main.v:572]
-INFO: [Synth 8-7052] The timing for the instance ram7/RAM_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance ram7/RAM_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance ram7/RAM_reg_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance ram7/RAM_reg_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance ram7/RAM_reg_0_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance ram7/RAM_reg_0_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance ram7/RAM_reg_0_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance ram7/RAM_reg_0_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance ram7/RAM_reg_0_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance ram7/RAM_reg_0_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance ram7/RAM_reg_0_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
-INFO: [Synth 8-7052] The timing for the instance ram7/RAM_reg_0_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[0] ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[0]__0 ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:594]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[31]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[31] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[30]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[30] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[29]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[29] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[28]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[28] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[27]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[27] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[26]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[26] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[25]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[25] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[24]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[24] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[23]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[23] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[22]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[22] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[21]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[21] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[20]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[20] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[19]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[19] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[18]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[18] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[17]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[17] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[16]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[16] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[15]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[15] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[14]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[14] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[13]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[13] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[12]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[12] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[11]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[11] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[10]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[10] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[9]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[9] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[7]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[7] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[6]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[6] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[8]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[8] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[5]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[5] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[4]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[4] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[3]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[3] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[2]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[2] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-4765] Removing register instance (\PIKA_HPOS_R_reg[1]__0 ) from module (main) as it is equivalent to (\PIKA_HPOS_R_reg[1] ) and driving same net [C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.srcs/sources_1/new/main.v:572]
+INFO: [Synth 8-7052] The timing for the instance ram1/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ram1/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ram1/RAM_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ram1/RAM_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ram1/RAM_reg_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ram1/RAM_reg_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ram2/RAM_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ram2/RAM_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ram2/RAM_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ram2/RAM_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ram2/RAM_reg_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance ram2/RAM_reg_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance ram0/RAM_reg_1_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance ram0/RAM_reg_1_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance ram0/RAM_reg_1_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
@@ -418,7 +420,7 @@ INFO: [Synth 8-7052] The timing for the instance ram0/RAM_reg_1_9__0 (implemente
 INFO: [Synth 8-7052] The timing for the instance ram0/RAM_reg_1_10__0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance ram0/RAM_reg_1_11__0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:12 ; elapsed = 00:01:12 . Memory (MB): peak = 1719.664 ; gain = 880.832
+Finished Technology Mapping : Time (s): cpu = 00:01:07 ; elapsed = 00:01:07 . Memory (MB): peak = 1700.477 ; gain = 861.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -436,37 +438,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:17 ; elapsed = 00:01:18 . Memory (MB): peak = 1719.664 ; gain = 880.832
+Finished IO Insertion : Time (s): cpu = 00:01:12 ; elapsed = 00:01:13 . Memory (MB): peak = 1700.477 ; gain = 861.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:17 ; elapsed = 00:01:18 . Memory (MB): peak = 1719.664 ; gain = 880.832
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:12 ; elapsed = 00:01:13 . Memory (MB): peak = 1700.477 ; gain = 861.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:19 ; elapsed = 00:01:19 . Memory (MB): peak = 1719.664 ; gain = 880.832
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:13 ; elapsed = 00:01:13 . Memory (MB): peak = 1700.477 ; gain = 861.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:19 ; elapsed = 00:01:19 . Memory (MB): peak = 1719.664 ; gain = 880.832
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:13 ; elapsed = 00:01:13 . Memory (MB): peak = 1700.477 ; gain = 861.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:19 ; elapsed = 00:01:19 . Memory (MB): peak = 1719.664 ; gain = 880.832
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:13 ; elapsed = 00:01:13 . Memory (MB): peak = 1700.477 ; gain = 861.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:19 ; elapsed = 00:01:19 . Memory (MB): peak = 1719.664 ; gain = 880.832
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:13 ; elapsed = 00:01:13 . Memory (MB): peak = 1700.477 ; gain = 861.348
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -484,7 +486,7 @@ DSP Final Report (the ' indicates corresponding REG is set)
 |main        | (PCIN+A:B+C)' | 0      | 17     | -      | -      | 17     | 0    | 0    | -    | -    | -     | 0    | 1    | 
 |main        | (C+D+A*B)'    | 30     | 6      | 17     | 9      | 17     | 0    | 0    | 0    | 0    | 0     | 0    | 1    | 
 |main        | (C+D+A*B)'    | 30     | 6      | 17     | 9      | 17     | 0    | 0    | 0    | 0    | 0     | 0    | 1    | 
-|main        | D+A*B         | 30     | 6      | -      | 9      | 23     | 0    | 0    | -    | 0    | 0     | 0    | 0    | 
+|main        | D+A*B         | 30     | 5      | -      | 9      | 22     | 0    | 0    | -    | 0    | 0     | 0    | 0    | 
 +------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 
@@ -501,52 +503,47 @@ Report Cell Usage:
 |1     |BUFG      |     1|
 |2     |CARRY4    |   566|
 |3     |DSP48E1   |     9|
-|8     |LUT1      |   632|
-|9     |LUT2      |   886|
-|10    |LUT3      |   198|
-|11    |LUT4      |   767|
-|12    |LUT5      |   314|
-|13    |LUT6      |  1420|
-|14    |MUXF7     |   255|
-|15    |MUXF8     |    48|
-|16    |RAM128X1S |    60|
-|17    |RAM16X1S  |    84|
-|18    |RAM256X1S |  2040|
-|19    |RAM32X1S  |    24|
-|20    |RAM64X1S  |    12|
-|21    |RAMB36E1  |    48|
-|69    |FDRE      |  1185|
-|70    |FDSE      |    78|
-|71    |IBUF      |     7|
-|72    |OBUF      |    15|
-|73    |OBUFT     |     3|
+|8     |LUT1      |   630|
+|9     |LUT2      |   843|
+|10    |LUT3      |   193|
+|11    |LUT4      |   775|
+|12    |LUT5      |   275|
+|13    |LUT6      |   938|
+|14    |MUXF7     |    96|
+|15    |RAM128X1S |    60|
+|16    |RAM16X1S  |    48|
+|17    |RAM256X1S |   804|
+|18    |RAMB36E1  |    48|
+|60    |FDRE      |  1021|
+|61    |FDSE      |    74|
+|62    |IBUF      |     7|
+|63    |OBUF      |    15|
+|64    |OBUFT     |     3|
 +------+----------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:19 ; elapsed = 00:01:19 . Memory (MB): peak = 1719.664 ; gain = 880.832
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:13 ; elapsed = 00:01:13 . Memory (MB): peak = 1700.477 ; gain = 861.348
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 8 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:08 ; elapsed = 00:01:17 . Memory (MB): peak = 1719.664 ; gain = 814.180
-Synthesis Optimization Complete : Time (s): cpu = 00:01:19 ; elapsed = 00:01:20 . Memory (MB): peak = 1719.664 ; gain = 880.832
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:02 ; elapsed = 00:01:11 . Memory (MB): peak = 1700.477 ; gain = 761.062
+Synthesis Optimization Complete : Time (s): cpu = 00:01:13 ; elapsed = 00:01:14 . Memory (MB): peak = 1700.477 ; gain = 861.348
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.118 . Memory (MB): peak = 1722.520 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 3146 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.089 . Memory (MB): peak = 1703.320 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1631 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1728.234 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1706.996 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 2220 instances were transformed.
+  A total of 912 instances were transformed.
   RAM128X1S => RAM128X1S (MUXF7, RAMS64E(x2)): 60 instances
-  RAM16X1S => RAM32X1S (RAMS32): 84 instances
-  RAM256X1S => RAM256X1S (MUXF7(x2), MUXF8, RAMS64E(x4)): 2040 instances
-  RAM32X1S => RAM32X1S (RAMS32): 24 instances
-  RAM64X1S => RAM64X1S (RAMS64E): 12 instances
+  RAM16X1S => RAM32X1S (RAMS32): 48 instances
+  RAM256X1S => RAM256X1S (MUXF7(x2), MUXF8, RAMS64E(x4)): 804 instances
 
-Synth Design complete | Checksum: fecc15a5
+Synth Design complete | Checksum: 5c54990e
 INFO: [Common 17-83] Releasing license: Synthesis
-114 Infos, 36 Warnings, 0 Critical Warnings and 0 Errors encountered.
+114 Infos, 38 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:28 ; elapsed = 00:01:30 . Memory (MB): peak = 1728.234 ; gain = 1269.250
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Shlab_18/Desktop/project/project.runs/synth_1/main.dcp' has been generated.
+synth_design: Time (s): cpu = 00:01:20 ; elapsed = 00:01:22 . Memory (MB): peak = 1706.996 ; gain = 1247.652
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Shlab_19/Desktop/K_Lab5/K/project/project.runs/synth_1/main.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file main_utilization_synth.rpt -pb main_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Fri Dec 15 02:19:40 2023...
+INFO: [Common 17-206] Exiting Vivado at Fri Dec 15 15:26:55 2023...
