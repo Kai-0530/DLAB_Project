@@ -30,7 +30,7 @@ localparam [3:0] S_MAIN_INIT    = 0,
 wire [3:0]  btn_pressed;
 reg  [3:0]  P, P_next;
 reg is_smashing = 0;
-assign usr_led[3] = is_smashing;
+
  
 reg  [31:0] clk_wait, clk_ball, clk_gravity;
 reg  [31:0] speed_up;
@@ -40,14 +40,14 @@ reg  [31:0] clk_pika, clk_pika_bot;
 reg  [31:0] clk_cloud1, clk_cloud2;
 wire [9:0]  pos_cloud1, pos_cloud2;
 wire        regn_ball, regn_pika, regn_pika_bot;
-wire        regn_cloud1, regn_cloud2, regn_score, regn_score2;
+wire        regn_cloud1, regn_cloud2, regn_score, regn_score2, regn_gameover, regn_youwin, regn_p_start;
  
 // declare SRAM control signals
 wire [16:0] sram_addr_bg, sram_addr_cloud1, sram_addr_cloud2, sram_addr_score;
-wire [16:0] sram_addr_pika, sram_addr_pika_bot, sram_addr_ball, sram_addr_score2;
+wire [16:0] sram_addr_pika, sram_addr_pika_bot, sram_addr_ball, sram_addr_score2, sram_addr_gameover, sram_addr_youwin, sram_addr_p_start;
 wire [11:0] data_in;
 wire [11:0] data_out_bg, data_out_cloud1, data_out_cloud2, data_out_score;
-wire [11:0] data_out_pika, data_out_pika_bot, data_out_ball, data_out_score2;
+wire [11:0] data_out_pika, data_out_pika_bot, data_out_ball, data_out_score2, data_out_gameover, data_out_youwin, data_out_p_start;
 wire        sram_we, sram_en;
  
 // General VGA control signals
@@ -64,9 +64,10 @@ wire [9:0] pixel_y;   // y coordinate of the next pixel (between 0 ~ 479)
 reg  [11:0] rgb_reg;  // RGB value for the current pixel
 reg  [11:0] rgb_next; // RGB value for the next pixel
 reg  [3:0] now_s1, now_s2;
+assign usr_led = now_s1;
 // Application-specific VGA signals
 reg  [17:0] pixel_addr_bg, pixel_addr_cloud1, pixel_addr_cloud2, pixel_addr_score;
-reg  [17:0] pixel_addr_pika, pixel_addr_pika_bot, pixel_addr_ball, pixel_addr_score2;
+reg  [17:0] pixel_addr_pika, pixel_addr_pika_bot, pixel_addr_ball, pixel_addr_score2, pixel_addr_gameover, pixel_addr_youwin, pixel_addr_p_start;
  
 // Declare the video buffer size
 localparam VBUF_W = 320; // video buffer width
@@ -81,6 +82,12 @@ localparam SCORE_W = 24;
 localparam BALL_H = 30;
 localparam CLOUD_W = 45;
 localparam CLOUD_H = 20;
+localparam gameover_W = 141;
+localparam gameover_H = 15;
+localparam youwin_W = 85;
+localparam youwin_H = 15;
+localparam p_start_W = 189;
+localparam p_start_H = 15;
 
 localparam PIKA_VPOS = 173; // Vertical location of the pika.
 reg [31:0] PIKA_HPOS_R = 319;
@@ -93,7 +100,14 @@ localparam SCORE_VPOS = 25;
 localparam SCORE_L = 40;//320-40=280-24=256
 localparam SCORE2_VPOS = 25;
 localparam SCORE2_L = 256;
- 
+
+localparam gameover_VPOS = 120;
+localparam gameover_L = 90;
+localparam youwin_VPOS = 120;
+localparam youwin_L = 118;
+localparam p_start_VPOS = 120;
+localparam p_start_L = 66;
+
 reg signed [31:0] BALL_VPOS_TOP = 5;
 reg signed [31:0] BALL_HPOS_L = 278;
 reg signed [31:0] BALL_HPOS_R = 11;
@@ -151,12 +165,17 @@ clk_divider#(2) clk_divider0(
   .reset(~reset_n),
   .clk_out(vga_clk)
 );
- 
+
+wire btn1_moveup, btn3_movedown;
+
 btn_move btn_db0(.clk(clk), .btn_input(usr_btn[0]), .btn_output(btn_pressed[0]));
 debounce btn_db1(.clk(clk), .btn_input(usr_btn[1]), .btn_output(btn_pressed[1]));
 btn_move btn_db2(.clk(clk), .btn_input(usr_btn[2]), .btn_output(btn_pressed[2]));
 debounce btn_db3(.clk(clk), .btn_input(usr_btn[3]), .btn_output(btn_pressed[3]));
- 
+debounce_ericyu btn1_move(.pb_1(usr_btn[1]), .clk(clk), .pb_out(btn1_moveup));
+debounce_ericyu btn3_move(.pb_1(usr_btn[3]), .clk(clk), .pb_out(btn3_movedown));
+
+//debounce_ericyu(input pb_1, clk, output pb_out);
 // ------------------------------------------------------------------------
 // The following code describes an initialized SRAM memory block.
 sram #(.DATA_WIDTH(12), .ADDR_WIDTH(18), .RAM_SIZE(VBUF_W*VBUF_H), .FILE("background.mem"))
@@ -185,7 +204,15 @@ sram #(.DATA_WIDTH(12), .ADDR_WIDTH(18), .RAM_SIZE(SCORE_H*SCORE_W*8), .FILE("nu
 sram #(.DATA_WIDTH(12), .ADDR_WIDTH(18), .RAM_SIZE(SCORE_H*SCORE_W*8), .FILE("nums.mem"))
   ram7 (.clk(clk), .we(sram_we), .en(sram_en),
           .addr(sram_addr_score2), .data_i(data_in), .data_o(data_out_score2));
-
+sram #(.DATA_WIDTH(12), .ADDR_WIDTH(18), .RAM_SIZE(gameover_H*gameover_W), .FILE("game_over.mem"))
+  ram8 (.clk(clk), .we(sram_we), .en(sram_en),
+          .addr(sram_addr_gameover), .data_i(data_in), .data_o(data_out_gameover));
+sram #(.DATA_WIDTH(12), .ADDR_WIDTH(18), .RAM_SIZE(youwin_H*youwin_W), .FILE("you win.mem"))
+  ram9 (.clk(clk), .we(sram_we), .en(sram_en),
+          .addr(sram_addr_youwin), .data_i(data_in), .data_o(data_out_youwin));
+sram #(.DATA_WIDTH(12), .ADDR_WIDTH(18), .RAM_SIZE(p_start_H*p_start_W), .FILE("p_start.mem"))
+  ram10 (.clk(clk), .we(sram_we), .en(sram_en),
+          .addr(sram_addr_p_start), .data_i(data_in), .data_o(data_out_p_start));
 
 assign sram_we = usr_sw[3]; // In this demo, we do not write the SRAM. However, if
                             // you set 'sram_we' to 0, Vivado fails to synthesize
@@ -199,6 +226,10 @@ assign sram_addr_cloud1 = pixel_addr_cloud1;
 assign sram_addr_cloud2 = pixel_addr_cloud2;
 assign sram_addr_score = pixel_addr_score;
 assign sram_addr_score2 = pixel_addr_score2;
+assign sram_addr_gameover = pixel_addr_gameover;
+assign sram_addr_youwin = pixel_addr_youwin;
+assign sram_addr_p_start = pixel_addr_p_start;
+
 assign data_in = 12'h000; // SRAM is read-only so we tie inputs to zeros.
 // End of the SRAM memory block.
 // ------------------------------------------------------------------------
@@ -265,6 +296,23 @@ always @(posedge clk) begin
   end
 end
 //-------------------------------------------------------------------------
+assign regn_p_start =
+          pixel_y >= (p_start_VPOS<<1) && pixel_y < (p_start_VPOS + p_start_H)<<1 &&
+          (pixel_x + (p_start_W<<1) - 1) >= ((p_start_L+p_start_W-1)<<1) && pixel_x <= ((p_start_L+p_start_W-1)<<1);
+          
+always @ (posedge clk) begin
+  if (~reset_n) begin
+    pixel_addr_p_start <= 0;
+  end else begin
+    if (regn_p_start)
+      pixel_addr_p_start <= ((pixel_y>>1) - p_start_VPOS)*p_start_W +
+                        ((pixel_x + (p_start_W<<1) - 1 - ((p_start_L+p_start_W-1)<<1)) >> 1);
+    else
+      pixel_addr_p_start <= 0;
+  end
+end
+
+//-------------------------------------------------------------------------
 // SCORE START
 
 always@(posedge clk) begin
@@ -284,7 +332,15 @@ assign regn_score =
 assign regn_score2 =
           pixel_y >= (SCORE2_VPOS<<1) && pixel_y < (SCORE2_VPOS + SCORE_H)<<1 &&
           (pixel_x + (SCORE_W<<1) - 1) >= ((SCORE2_L+SCORE_W-1)<<1) && pixel_x <= ((SCORE2_L+SCORE_W-1)<<1);
- 
+          
+assign regn_gameover =
+          pixel_y >= (gameover_VPOS<<1) && pixel_y < (gameover_VPOS + gameover_H)<<1 &&
+          (pixel_x + (gameover_W<<1) - 1) >= ((gameover_L+gameover_W-1)<<1) && pixel_x <= ((gameover_L+gameover_W-1)<<1);
+assign regn_youwin =
+          pixel_y >= (youwin_VPOS<<1) && pixel_y < (youwin_VPOS + youwin_H)<<1 &&
+          (pixel_x + (youwin_W<<1) - 1) >= ((youwin_L+youwin_W-1)<<1) && pixel_x <= ((youwin_L+youwin_W-1)<<1);
+          
+          
 always @ (posedge clk) begin
   if (~reset_n) begin
     pixel_addr_score <= 0;
@@ -311,6 +367,29 @@ always @ (posedge clk) begin
   end
 end
 
+always @ (posedge clk) begin
+  if (~reset_n) begin
+    pixel_addr_gameover <= 0;
+  end else begin
+    if (regn_gameover)
+      pixel_addr_gameover <= ((pixel_y>>1) - gameover_VPOS)*gameover_W +
+                        ((pixel_x + (gameover_W<<1) - 1 - ((gameover_L+gameover_W-1)<<1)) >> 1);
+    else
+      pixel_addr_gameover <= 0;
+  end
+end
+always @ (posedge clk) begin
+  if (~reset_n) begin
+    pixel_addr_youwin <= 0;
+  end else begin
+    if (regn_youwin)
+      pixel_addr_youwin <= ((pixel_y>>1) - youwin_VPOS)*youwin_W +
+                        ((pixel_x + (youwin_W<<1) - 1 - ((youwin_L+youwin_W-1)<<1)) >> 1);
+    else
+      pixel_addr_youwin <= 0;
+  end
+end
+
 // ------------------------------------------------------------------------
 // BALL
 reg [31:0] smash_cnt_down = 0; // smashing for 0.5sec
@@ -320,7 +399,7 @@ always @(posedge clk) begin
 end
 always @(posedge clk) begin
   if (~reset_n || smash_cnt_down == 10000000) is_smashing <= 0;
-  else if (btn_pressed[3]) is_smashing <= 1;
+  else if (btn_pressed[3] && usr_sw[0] == 0) is_smashing <= 1;
 end
 
 always @(posedge clk) begin
@@ -368,12 +447,12 @@ always @(posedge clk) begin //speed
   end else if (P == S_MAIN_SPEED) begin
     if (BALL_VPOS_TOP <= 0) begin
       speed_y <= (-1) * speed_y;
-    end else if (BALL_VPOS_TOP <= (PIKA_VPOS - jumping) && (PIKA_VPOS - BALL_VPOS_TOP <= 30+jumping) &&
+    end else if (BALL_VPOS_TOP <= (PIKA_VPOS+32-jumping) && (PIKA_VPOS - BALL_VPOS_TOP <= 30+jumping) &&
                  BALL_HPOS_L >= (PIKA_HPOS_R - 21) && BALL_HPOS_L <= PIKA_HPOS_R) begin
       //speed_x <= (speed_x > 0 ? speed_x : (-1) * speed_x); //right of pika
       speed_x <= 8;
       speed_y <= 10;
-    end else if (BALL_VPOS_TOP <= (PIKA_VPOS - jumping) && (PIKA_VPOS - BALL_VPOS_TOP <= 30+jumping) &&
+    end else if (BALL_VPOS_TOP <= (PIKA_VPOS+32-jumping) && (PIKA_VPOS - BALL_VPOS_TOP <= 30+jumping) &&
                  BALL_HPOS_L >= (PIKA_HPOS_R - 41 - 20) && BALL_HPOS_L <= PIKA_HPOS_R) begin // ============================
         if(is_smashing && PIKA_VPOS - jumping < 173)begin
             if(PIKA_HPOS_R < 240)begin
@@ -384,7 +463,7 @@ always @(posedge clk) begin //speed
                 speed_y <= -5;
             end
         end else begin
-            speed_x <= -8;//速度變負的
+            speed_x <= -8;//?t????t??
             speed_y <= 10;
         end
     end else if (BALL_VPOS_TOP <= PIKA_BOT_VPOS && PIKA_BOT_VPOS - BALL_VPOS_TOP <= 30 &&
@@ -453,10 +532,12 @@ always @(posedge clk) begin //bouncing
       BALL_HPOS_L_NXT <= 289;
       BALL_HPOS_R_NXT <= 0;
       last_touched <= 0;
-    end else if (speed_x > 0) begin
+    end else if (speed_x > 0) begin 
+    
+    
       if (BALL_HPOS_L + 30 <= PIKA_BOT_HPOS_R - 40 &&
           BALL_HPOS_L_CAL + 30 >= PIKA_BOT_HPOS_R - 40 &&
-          BALL_VPOS_TOP_CAL + 30 >= PIKA_BOT_VPOS) begin
+          BALL_VPOS_TOP_CAL + 30 >= PIKA_BOT_VPOS) begin // BOT
         BALL_HPOS_L_NXT <= PIKA_BOT_HPOS_R - 40 - 30;
         BALL_HPOS_R_NXT <= 289 - PIKA_BOT_HPOS_R + 40 + 30;
         last_touched <= 1;
@@ -468,7 +549,7 @@ always @(posedge clk) begin //bouncing
         last_touched <= 5;
       end else if (BALL_HPOS_L + 30 <= PIKA_HPOS_R - 40 &&
                    BALL_HPOS_L_CAL + 30 >= PIKA_HPOS_R - 40 &&
-                   BALL_VPOS_TOP_CAL + 30 >= (PIKA_VPOS - jumping)) begin
+                   BALL_VPOS_TOP_CAL + 30 >= (PIKA_VPOS - jumping)) begin // player
         BALL_HPOS_L_NXT <= PIKA_HPOS_R - 40 - 30;
         BALL_HPOS_R_NXT <= 289 - PIKA_HPOS_R + 40 + 30;
         last_touched <= 2;
@@ -477,6 +558,8 @@ always @(posedge clk) begin //bouncing
         BALL_HPOS_R_NXT <= BALL_HPOS_R_CAL;
         last_touched <= 0;
       end
+      
+      
     end else if (speed_x < 0) begin
       if (BALL_HPOS_L >= PIKA_HPOS_R &&
           BALL_HPOS_L_CAL <= PIKA_HPOS_R &&
@@ -537,20 +620,43 @@ always@(posedge clk) begin
         jumps <= 0;
         jumping <= 0;
     end
+    else if(usr_sw[0] == 1)begin
+        jumps <= 2;
+        if(pika20 == 0 && clk_pika[18] == 1)begin
+            if(usr_btn[1])begin
+                if(jumping < 95)jumping <= jumping + 1;
+            end
+            if(usr_btn[3])begin
+                if(jumping > 0)jumping <= jumping - 1;
+            end
+        end
+        
+    end
     else if(jumps != 0) begin     
-        case(jumping)
+        /*case(jumping)
             10'd95: jumps <= 2;
             10'd0: jumps <= 0;
             default: jumps <= jumps;
-        endcase
+        endcase*/
+        if(jumping >= 100)begin // when jumping=1, 1-2=-1, leads to a large number
+            jumps <= 0;
+            jumping <= 0;
+        end
+        else if(jumping >= 95)jumps <= 2;
+        else if(jumping <= 0)begin
+            jumps <= 0;
+            jumping <= 0;
+        end
+        
+        
         if(pika20 == 0 && clk_pika[18] == 1) begin
             case(jumps)
             2'd1: begin
-                if(jumping >80) jumping <= jumping + 1;
+                if(jumping > 80) jumping <= jumping + 1;
                 else jumping <= jumping + 2;
               end
             2'd2: begin
-                if(jumping >80) jumping <= jumping - 1;
+                if(jumping > 80) jumping <= jumping - 1;
                 else jumping <= jumping - 2;
             end
             default: jumping <= 0;
@@ -713,6 +819,9 @@ end
 always @(*) begin
   if (~video_on)
     rgb_next = 12'h000; // Synchronization period, must set RGB values to zero.
+ // RGB value at (pixel_x, pixel_y)
+  else if (regn_p_start && P == S_MAIN_START && data_out_p_start != 12'h0f0)
+    rgb_next = data_out_p_start; // RGB value at (pixel_x, pixel_y)
   else if (data_out_ball != 12'h0f0 && P != S_MAIN_INIT && P != S_MAIN_START)
     rgb_next = data_out_ball; // RGB value at (pixel_x, pixel_y)
   else if (regn_pika && data_out_pika != 12'h0f0)
@@ -727,7 +836,11 @@ always @(*) begin
     rgb_next = data_out_cloud1;
   else if (regn_cloud2 && data_out_cloud2 != 12'h0f0)
     rgb_next = data_out_cloud2;
-  else
+  else if (regn_gameover && data_out_gameover != 12'h0f0 && now_s1 == 7 )
+    rgb_next = data_out_gameover;
+  else if (regn_youwin && data_out_youwin != 12'h0f0 && now_s2 == 7 )
+    rgb_next = data_out_youwin;
+  else 
     rgb_next = data_out_bg;
 end
 // End of the video data display code.
