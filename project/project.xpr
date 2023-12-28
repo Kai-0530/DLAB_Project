@@ -4,7 +4,7 @@
 <!-- Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.                   -->
 <!-- Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.   -->
 
-<Project Product="Vivado" Version="7" Minor="63" Path="C:/Users/eric7/OneDrive/Desktop/DLAB_Project-main/project/project.xpr">
+<Project Product="Vivado" Version="7" Minor="63" Path="C:/Users/user/Documents/GitHub/DLAB_Project/project/project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="a067c454ec7e4b3cbf2a78dd9461bd2a"/>
@@ -185,12 +185,6 @@
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../../../nums.mem"/>
           <Attr Name="ImportTime" Val="1702624570"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../../Dlab_PikachuVolleyball-master/mem/first_background.mem">
-        <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
