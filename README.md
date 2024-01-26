@@ -1,8 +1,7 @@
-# DLAB_Project
+# DLAB_Project_Pikachu_Volleyball
 Fall 2023 
 
 ## Introduction
-Pikachu Volleyball:
 We can control a pikachu to play volleyball with a robot pikachu.
 In this project, we design not only basic functions but also some interesting cheating functions.
 
