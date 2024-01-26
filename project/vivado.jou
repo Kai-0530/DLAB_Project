@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:05:29 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Fri Dec 29 11:10:58 2023
+# Process ID: 26212
+# Current directory: C:/Users/eric7/OneDrive/Desktop/project-f/project
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent27132 C:\Users\eric7\OneDrive\Desktop\project-f\project\project.xpr
+# Log file: C:/Users/eric7/OneDrive/Desktop/project-f/project/vivado.log
+# Journal file: C:/Users/eric7/OneDrive/Desktop/project-f/project\vivado.jou
+# Running On: LAPTOP-U9RNVGB3, OS: Windows, CPU Frequency: 2304 MHz, CPU Physical cores: 8, Host memory: 16905 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/eric7/OneDrive/Desktop/project-f/project/project.xpr
+update_compile_order -fileset sources_1
